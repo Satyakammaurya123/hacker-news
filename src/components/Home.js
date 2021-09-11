@@ -10,9 +10,9 @@ const Home = () => {
   return(
       <>
       <SearchBar setSearchterm={setSearchTerm}/>
+      {console.log(state.hits)}
       <Grid header = {searchTerm ? 'Search Result' : 'Top News'}>
         {state.hits && state.hits.map(news => (
-          // {console.log(news.title);}
           <Thumb
            key ={news.objectID}
            text ={news.title}
