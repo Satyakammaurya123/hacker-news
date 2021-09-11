@@ -2,22 +2,26 @@ import React, { useState, useEffect } from 'react';
 
 import SearchBar from './SearchBar';
 import { useHomeFetch } from '../hooks/useHomeFetch';
+import Grid from './Grid';
+import Thumb from './Thumb';
 
 const Home = () => {
   const { state, loading, error,searchTerm, setSearchTerm,setIsLoadingMore } = useHomeFetch();
-  const results = state.hits;
   return(
       <>
       <SearchBar setSearchterm={setSearchTerm}/>
-      <ul>
-        {results && results.map(news => (
-          <li key ={news.objectID}>
-            {news.title}
-          </li>
-        ))
-        }
-      </ul>
-      
+      <Grid header = {searchTerm ? 'Search Result' : 'Top News'}>
+        {state.hits && state.hits.map(news => (
+          // {console.log(news.title);}
+          <Thumb
+           key ={news.objectID}
+           text ={news.title}
+           clickable={true}
+           newsID = {news.objectID}
+           />       
+        ))}
+      </Grid>
+  
       </>
   )
 };
