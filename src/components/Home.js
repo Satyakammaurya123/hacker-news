@@ -36,8 +36,6 @@ const Home = () => {
               clickable={true}
               newsID = {news.objectID}
             />
-        
-
           : []       
         )}
         </ol>

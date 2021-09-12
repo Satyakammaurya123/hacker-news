@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Spinner from "./Spinner";
 import {useNewsFetch} from '../hooks/useNewsFetch';
 // import BreadCrumb from "./BreadCrumb";
+import { Wrapper } from "./News.styles";
 
 const News = () => {
     const { objectID } = useParams();
@@ -15,17 +16,21 @@ const News = () => {
     //console.log(state);
     
     const childrenText = news.children.flatMap(childrens => childrens.text 
-        ? <li key = {childrens.id}>{childrens.text.replace(/<[^>]*>?/gm, '')}</li>
+        ?<Wrapper>
+            <li key = {childrens.id}>{childrens.text.replace(/<[^>]*>?/gm, '')}</li>
+        </Wrapper> 
         : []
         // <li>{childrens.text && childrens.text.replace(/<[^>]*>?/gm, '')}</li>
     );
     return(
         <>
         {/* <BreadCrumb/> */}
-        <h3>{news.title}</h3>
-        <div>Points: {news.points}</div>
-        <h3>Comments: </h3>
-        <ol>{childrenText}</ol>
+        <Wrapper>
+            <h3>{news.title}</h3>
+            <div><b>Points:</b> {news.points}</div>
+            <h3>Comments: </h3>
+            <ol>{childrenText}</ol>
+        </Wrapper>
         </>
     )
 }
