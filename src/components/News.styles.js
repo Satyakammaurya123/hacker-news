@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
 max-width: var(--maxWidth);
-
+align-items: center;
 li{
     color: var(--medGrey);
     padding: 0px;
