@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
 max-width: var(--maxWidth);
@@ -19,4 +18,6 @@ h3{
 
 export const Content = styled.div`
     font-size: small;
+    color: var(--lightGrey);
+
 `;

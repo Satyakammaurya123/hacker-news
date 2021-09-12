@@ -5,7 +5,7 @@ const apiSettings = {
   fetchNews: async(searchTerm, page) => {
     const endpoint = searchTerm
       ? `${SEARCH_BASE_URL}${searchTerm}&page=${page}&hitsPerPage=50`
-      : `${SEARCH_BASE_URL}${searchTerm}&page=${page}&hitsPerPage=50`
+      : `${SEARCH_BASE_URL}&page=${page}&hitsPerPage=50`
       return await (await fetch(endpoint)).json();
   },
   fetchNew: async objectID => {

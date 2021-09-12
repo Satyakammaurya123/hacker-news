@@ -5,18 +5,21 @@ import {Wrapper,Content} from './Thumb.styles'
 
 const Thumb = ({text, newsID, clickable, author, comments}) => (
     <div>
+        <li>
         {clickable ? (
+                <Wrapper>
                 <Link to={`/${newsID}`} style={{ textDecoration: 'none' }}>
-                    <Wrapper>
-                        <h3>{text}</h3>
-                        <Content>
-                            by: {author} Comments: {comments} 
-                        </Content>
-                    </Wrapper>
+                        <h3>{text}</h3>                
                 </Link>
+                    <Content>
+                        by: {author} Comments: {comments} 
+                    </Content>
+                </Wrapper>
+
             ) : (
                 {text}
             )}
+            </li>
     </div>
 );
 Thumb.propTypes = {

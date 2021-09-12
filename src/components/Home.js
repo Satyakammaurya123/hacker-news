@@ -25,18 +25,22 @@ const Home = () => {
       <BreadCrumb />
       <SearchBar setSearchTerm = { setSearchTerm }/>
       <Grid header = {searchTerm ? 'Search Result' : 'Top News'}>
+        <ol>
         {state.hits && state.hits.flatMap(news => news.title
           ?
-          <Thumb
-           key ={news.objectID}
-           text ={news.title}
-           author={news.author}
-           comments={news.num_comments}
-           clickable={true}
-           newsID = {news.objectID}
-          />
+            <Thumb
+              key ={news.objectID}
+              text ={news.title}
+              author={news.author}
+              comments={news.num_comments}
+              clickable={true}
+              newsID = {news.objectID}
+            />
+        
+
           : []       
         )}
+        </ol>
       </Grid>
       {loading && <Spinner/>}
       {state.page < state.nbPages && !loading && (

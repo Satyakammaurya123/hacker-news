@@ -14,14 +14,15 @@ const News = () => {
     //console.log(state);
     
     const childrenText = news.children.flatMap(childrens => childrens.text 
-        ? <li>{childrens.text.replace(/<[^>]*>?/gm, '')}</li>
+        ? <li key = {childrens.id}>{childrens.text.replace(/<[^>]*>?/gm, '')}</li>
         : []
         // <li>{childrens.text && childrens.text.replace(/<[^>]*>?/gm, '')}</li>
     );
     return(
         <>
         <h3>{news.title}</h3>
-        <div>{news.points}</div>
+        <div>Points: {news.points}</div>
+        <h3>Comments: </h3>
         <ol>{childrenText}</ol>
         </>
     )
