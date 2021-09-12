@@ -14,8 +14,6 @@ h1{
 `;
 
 export const Content = styled.div`
-    display: grid;
-    //Repeat columns used to make the gridd responsive
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-    grid-gap: 2rem;
+    display: flex;
+    flex-direction: column;
 `;

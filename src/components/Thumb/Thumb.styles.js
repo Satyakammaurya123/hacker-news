@@ -1,23 +1,18 @@
 import styled from "styled-components";
 
-export const Image = styled.img`
-     width: 100%;
-     max-width: 800px;
-     transition: all 0.3s;
-     object-fit: cover;
-     border-radius: 20px;
-     border-color: var(--medGrey);
-     animation: animateThumb 0.5s;
+export const Wrapper = styled.div`
+max-width: var(--maxWidth);
+margin: 0 auto;
+padding: 0 20px;
 
-    :hover{
-        opacity: 0.8;
+h2{
+    color: var(--medGrey);
+    @media screen and (max-width: 768px) {
+        font-size: var(--fontMed);
     }
-     @keyframes animateThumb{
-         from {
-             opacity: 0;
-         }
-         to {
-             opacity: 1;
-         }
-     }
+}
+`;
+
+export const Content = styled.div`
+    font-size: smaller;
 `;
