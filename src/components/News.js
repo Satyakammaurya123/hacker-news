@@ -18,6 +18,7 @@ const News = () => {
     const childrenText = news.children.flatMap(childrens => childrens.text 
         ?<Wrapper>
             <li key = {childrens.id}>{childrens.text.replace(/<[^>]*>?/gm, '')}</li>
+            <hr/>
         </Wrapper> 
         : []
         // <li>{childrens.text && childrens.text.replace(/<[^>]*>?/gm, '')}</li>

@@ -14,10 +14,18 @@ h3{
         font-size: var(--fontMed);
     }
 }
+hr{
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #CCC, transparent);
+}
+
 `;
 
 export const Content = styled.div`
     font-size: small;
     color: var(--lightGrey);
+
+
 
 `;

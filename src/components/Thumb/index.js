@@ -5,9 +5,9 @@ import {Wrapper,Content} from './Thumb.styles'
 
 const Thumb = ({text, newsID, clickable, author, comments}) => (
     <div>
-        <li>
         {clickable ? (
                 <Wrapper>
+                <li>
                 <Link to={`/${newsID}`} style={{ textDecoration: 'none' }}>
                         <h3>{text}</h3>                
                 </Link>
@@ -15,12 +15,13 @@ const Thumb = ({text, newsID, clickable, author, comments}) => (
                     <Content>
                         by: {author} Comments: {comments} 
                     </Content>
+                </li>
+                <hr/>
                 </Wrapper>
 
             ) : (
                 {text}
             )}
-            </li>
     </div>
 );
 Thumb.propTypes = {
