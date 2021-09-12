@@ -6,7 +6,7 @@ import Grid from './Grid';
 import Thumb from './Thumb';
 import Spinner from './Spinner';
 import Button from './Button';
-import BreadCrumb from './BreadCrumb';
+// import BreadCrumb from './BreadCrumb';
 
 const Home = () => {
   const {
@@ -22,7 +22,7 @@ const Home = () => {
 
   return(
       <>
-      <BreadCrumb />
+      {/* <BreadCrumb /> */}
       <SearchBar setSearchTerm = { setSearchTerm }/>
       <Grid header = {searchTerm ? 'Search Result' : 'Top News'}>
         <ol>

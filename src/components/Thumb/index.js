@@ -11,6 +11,7 @@ const Thumb = ({text, newsID, clickable, author, comments}) => (
                 <Link to={`/${newsID}`} style={{ textDecoration: 'none' }}>
                         <h3>{text}</h3>                
                 </Link>
+                
                     <Content>
                         by: {author} Comments: {comments} 
                     </Content>

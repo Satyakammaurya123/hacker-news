@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import Spinner from "./Spinner";
 import {useNewsFetch} from '../hooks/useNewsFetch';
+// import BreadCrumb from "./BreadCrumb";
 
 const News = () => {
     const { objectID } = useParams();
@@ -20,6 +21,7 @@ const News = () => {
     );
     return(
         <>
+        {/* <BreadCrumb/> */}
         <h3>{news.title}</h3>
         <div>Points: {news.points}</div>
         <h3>Comments: </h3>

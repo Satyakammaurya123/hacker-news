@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import News from './components/News';
+// import NewHome from './components/NewHome'
 
 
 import { GlobalStyle } from './GlobalStyle';
@@ -19,14 +20,6 @@ const App =() => (
     <GlobalStyle/>
   </Router>
 )
-// function App() {
-//   return (
-//     <div className='App'>
-//       <Header />
-//       <Home />
-//       <GlobalStyle />
-//     </div>
-//   );
-// }
+
 
 export default App;
