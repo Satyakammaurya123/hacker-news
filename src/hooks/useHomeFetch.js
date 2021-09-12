@@ -1,5 +1,7 @@
-import React, { useEffect,useState } from 'react';
+import { useEffect,useState } from 'react';
 import API from '../API';
+import { isPersistedState } from '../helpers';
+
 const initialState = {
     hits: [],
     nbHits:0,
@@ -42,7 +44,15 @@ export const useHomeFetch = () =>{
 
     //Initialisation & Search
     useEffect(() => {
-        setState ([]);
+        if(!searchTerm) {
+            const sessionState =  isPersistedState('homeState');
+            if(sessionState) {
+                //Grab Data from session storage
+                setState(sessionState);
+                return;
+            }
+        }
+        setState (initialState);
         fetchNews(0,searchTerm);
     },[searchTerm]);
 
@@ -53,6 +63,10 @@ export const useHomeFetch = () =>{
     setIsLoadingMore(false);
     
     },[isLoadingMore,searchTerm,state.page])
+
+    useEffect(() => {
+        if(!searchTerm) sessionStorage.setItem('homeState',JSON.stringify(state));
+    },[searchTerm,state]);
 
 return {state,loading,error,searchTerm,setSearchTerm,setIsLoadingMore};
 };

@@ -15,6 +15,5 @@ const News = () => {
             Will Add News Here!!
         </>
     )
-
 }
 export default News;

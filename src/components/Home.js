@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import SearchBar from './SearchBar';
 import { useHomeFetch } from '../hooks/useHomeFetch';
@@ -8,11 +8,21 @@ import Spinner from './Spinner';
 import Button from './Button';
 
 const Home = () => {
-  const { state, loading, error,searchTerm, setSearchTerm,setIsLoadingMore } = useHomeFetch();
+  const {
+    state,
+    loading,
+    error,
+    searchTerm,
+    setSearchTerm,
+    setIsLoadingMore
+  } = useHomeFetch();
+
+  if (error) return <div>Something went wrong ...</div>;
+
   return(
       <>
-      <SearchBar setSearchterm={setSearchTerm}/>
 
+      <SearchBar setSearchterm = { setSearchTerm }/>
       <Grid header = {searchTerm ? 'Search Result' : 'Top News'}>
         {state.hits && state.hits.map(news => (
           <Thumb

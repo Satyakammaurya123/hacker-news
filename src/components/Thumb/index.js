@@ -1,11 +1,23 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+// import {Image} from './Thumb.styles'
 
-import {Image} from './Thumb.styles'
-
-const thumb = ({text, newsId, clickable}) => (
+const Thumb = ({text, newsID, clickable}) => (
     <div>
-        {text}
+        {clickable ? (
+                <Link to={`/${newsID}`}>
+                    {console.log(newsID)}
+                    {text}
+                </Link>
+            ) : (
+                {text}
+            )}
     </div>
 );
-
-export default thumb;
+Thumb.propTypes = {
+    text: PropTypes.string,
+    newsId: PropTypes.number,
+    clickable: PropTypes.bool
+  };
+export default Thumb;
