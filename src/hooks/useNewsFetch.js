@@ -13,7 +13,9 @@ export const useNewsFetch = objectID => {
                 setError(false);
 
                 const news = await API.fetchNew(objectID);
-
+                console.log(news);
+                setState(news);
+                setLoading(false);
             }
             catch(error)
             {
