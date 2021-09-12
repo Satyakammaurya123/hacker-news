@@ -6,9 +6,9 @@ import {Wrapper,Content} from './Thumb.styles'
 const Thumb = ({text, newsID, clickable, author, comments}) => (
     <div>
         {clickable ? (
-                <Link to={`/${newsID}`}>
+                <Link to={`/${newsID}`} style={{ textDecoration: 'none' }}>
                     <Wrapper>
-                        <h2>{text}</h2>
+                        <h3>{text}</h3>
                         <Content>
                             by: {author} Comments: {comments} 
                         </Content>
