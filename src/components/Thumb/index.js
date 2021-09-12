@@ -7,7 +7,6 @@ const Thumb = ({text, newsID, clickable}) => (
     <div>
         {clickable ? (
                 <Link to={`/${newsID}`}>
-                    {console.log(newsID)}
                     {text}
                 </Link>
             ) : (
